@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import MockData from './MockData';
+import Playlist from './components/Playlist';
+import './components/SearchBar'
+import SearchBar from './components/SearchBar';
+import SearchResults from './components/SearchResults';
 
 function App() {
+  let searchResultData = MockData;
+  let playlistData = MockData;
+  function addToPlaylist(e) {
+    console.log("adding to playlist", e.target);
+  }
+  function removeFromPlaylist(e) {
+    console.log("removing from playlist:", e.target)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        Jammming
+        <SearchBar></SearchBar>
       </header>
+      <div className='columns'>
+        <SearchResults data={searchResultData}></SearchResults>
+        <Playlist data={searchResultData}></Playlist>
+      </div>
     </div>
   );
 }
