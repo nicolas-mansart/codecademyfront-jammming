@@ -1,7 +1,7 @@
 import Track from "./Track";
 
 function Tracklist({tracks, clickHandler, actionBtn}) {
-    let trackElts = tracks.map((item) => (<Track data={item} clickHandler={clickHandler} actionBtn="-"></Track>))
+    let trackElts = tracks.map((item) => (<Track key={item.id} data={item} clickHandler={clickHandler} actionBtn={actionBtn}></Track>))
     return (
         <div className="tracklist">
             {trackElts}

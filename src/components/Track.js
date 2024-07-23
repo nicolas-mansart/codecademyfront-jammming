@@ -7,7 +7,7 @@ function Track({data, clickHandler, actionBtn}) {
             <p>{data.artist} - {data.album}</p>
             </div>
             <div className="action">
-                <button onClick={clickHandler}>{actionBtn}</button>
+                <button data-id={data.id} onClick={clickHandler}>{actionBtn}</button>
             </div>
         </div>
     )
