@@ -18,8 +18,8 @@ function App() {
   function addToPlaylist(e) {
     let itemId = e.target.getAttribute('data-id')
     console.log("adding to playlist", itemId);
-    let elt = searchResultData.find((item) => item.id == itemId);
-    let inPlaylist = playlistData.some((item) => item.id == itemId);
+    let elt = searchResultData.find((item) => item.id === itemId);
+    let inPlaylist = playlistData.some((item) => item.id === itemId);
     if(inPlaylist)
       console.log('item already in playlist')
     else if(!elt) {
@@ -35,7 +35,7 @@ function App() {
   function removeFromPlaylist(e) {
     let itemId = e.target.getAttribute('data-id')
     console.log("removing from playlist:", e.target)
-    setPlaylistData((prev) => prev.filter((item) => item.id != itemId))
+    setPlaylistData((prev) => prev.filter((item) => item.id !== itemId))
   }
 
   function changePlaylistTitle(e) {
